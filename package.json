@@ -1,0 +1,35 @@
+{
+  "name": "typegoose-graphql",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "npx eslint .",
+    "format": "npx prettier . --check --write"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.12.1",
+    "@hono/node-server": "^1.14.3",
+    "@typegoose/typegoose": "^12.16.0",
+    "dotenv": "^16.5.0",
+    "graphql": "^16.11.0",
+    "hono": "^4.7.10",
+    "mongoose": "^8.15.1",
+    "zod": "^3.25.42"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.27.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^20.11.17",
+    "bcrypt": "^6.0.0",
+    "eslint": "^9.27.0",
+    "globals": "^16.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "prettier": "3.5.3",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.0"
+  }
+}
