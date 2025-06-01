@@ -12,9 +12,7 @@ type Payload = {
 const resolvers = {
   Query: {
     users: async () => await UserModel.find(),
-
     user: async (_: any, { id }: { id: string }) => await UserModel.findById(id),
-
     me: async (_: any, __: any, context: any) => {
       if (!context.user) throw new Error("Unauthorized");
       return await UserModel.findById((context.user as any).id);
@@ -41,9 +39,7 @@ const resolvers = {
     },
 
     deleteUser: async (_: any, { id }: { id: string }, context: any) => {
-      if (!context.user || (context.user as any).role !== "admin") {
-        throw new Error("Unauthorized");
-      }
+      if (!context.user || (context.user as any).role !== "admin") throw new Error("Unauthorized");
       const res = await UserModel.findByIdAndDelete(id);
       return !!res;
     },
