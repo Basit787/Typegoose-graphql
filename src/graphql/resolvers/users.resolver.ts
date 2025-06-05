@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
-import { signToken } from "../lib/jwt.js";
-import { UserModel } from "../models/user.model.js";
+import { signToken } from "../../lib/jwt.js";
+import { UserModel } from "../../models/user.model.js";
 
 type Payload = {
   name: string;
@@ -9,7 +9,7 @@ type Payload = {
   role: string;
 };
 
-const resolvers = {
+const UserResolvers = {
   Query: {
     users: async () => await UserModel.find(),
     user: async (_: any, { id }: { id: string }) => await UserModel.findById(id),
@@ -46,4 +46,4 @@ const resolvers = {
   },
 };
 
-export default resolvers;
+export default UserResolvers;
