@@ -9,3 +9,5 @@ export const connectDB = async (callback: (message: boolean) => void) => {
     throw new Error("MongoDB connection error:", error as Error);
   }
 };
+
+// this is test for the git hub
